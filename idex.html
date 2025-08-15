@@ -1,0 +1,2099 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página dedicada a PC Gamer hecha por Gerónimo</title>
+    <meta name="description" content="La guía más completa y definitiva para optimizar tu PC. Descubre trucos avanzados, los mejores componentes y ofertas en equipos de segunda mano.">
+    <meta name="keywords" content="PC, gaming, optimización, rendimiento, comprar PC, trucos, guía, hardware, componentes, épico, usados, netbook, fps, calculadora, pc gamer, pesos argentinos, Argentina, CompraGamer, Maximus">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='90' font-size='90'%3E🎮%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /*
+        ================================================================================
+        | Archivo de Estilos Épicos - ¡Versión 2000+ líneas, esta es la buena!
+        |
+        | Este archivo contiene una cantidad masiva de estilos para la página de PC.
+        | Diseñado para ser extremadamente detallado y visualmente impresionante,
+        | ahora sin imágenes para cumplir con el pedido.
+        |
+        | ¡Vamos, Jerónimo, a superar la meta!
+        |
+        ================================================================================
+        */
+
+        /* ==================== VARIABLES Y ESTILOS GLOBALES ==================== */
+        :root {
+            --primary-color: #ff9800;
+            --secondary-color: #f57c00;
+            --tertiary-color: #263238;
+            --light-bg-start: #f8f9fa;
+            --light-bg-end: #e9ecef;
+            --dark-bg-start: #0f0a20;
+            --dark-bg-end: #2d1d4f;
+            --text-color-light: #212529;
+            --text-color-dark: #f8f9fa;
+            --box-shadow-color: rgba(0,0,0,0.5);
+            --hover-glow: #ffc107;
+            --border-radius-base: 15px;
+            --section-padding: 30px;
+        }
+
+        /* ------------------- Animaciones personalizadas ------------------- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulseBorder {
+            0% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 152, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0); }
+        }
+        @keyframes fadeInOnScroll {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ------------------- Reset y configuración base ------------------- */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg-start), var(--dark-bg-end));
+            color: var(--text-color-dark);
+            transition: background 0.5s, color 0.5s;
+            line-height: 1.6;
+            animation: fadeIn 1s ease-out;
+        }
+        body.light-mode {
+            background: linear-gradient(135deg, var(--light-bg-start), var(--light-bg-end));
+            color: var(--text-color-light);
+        }
+
+        /* ==================== APARTADO LATERAL (SIDEBAR) ==================== */
+        #sidebar-container {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+            width: 250px;
+            max-height: 95vh;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-color) transparent;
+        }
+        #sidebar-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        #sidebar-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        #sidebar-container::-webkit-scrollbar-thumb {
+            background-color: var(--primary-color);
+            border-radius: 20px;
+            border: 2px solid transparent;
+        }
+        .sidebar {
+            background-color: rgba(255, 152, 0, 0.95);
+            padding: var(--section-padding);
+            border-radius: var(--border-radius-base);
+            box-shadow: 2px 2px 15px var(--box-shadow-color);
+            margin-bottom: 20px;
+            transition: all 0.3s ease-in-out;
+            border: 1px solid var(--primary-color);
+            animation: pulseBorder 2s infinite;
+        }
+        .sidebar:hover {
+            animation: none;
+            transform: scale(1.01);
+        }
+        .sidebar summary {
+            font-weight: bold;
+            cursor: pointer;
+            color: white;
+            font-size: 1.1em;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        .sidebar a {
+            display: block;
+            margin-top: 5px;
+            padding: 8px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .sidebar a:hover {
+            background-color: #e65100;
+            text-shadow: 0 0 12px #fff;
+            transform: scale(1.03);
+        }
+        #cart-sidebar-summary {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            text-align: left;
+            transition: all 0.3s;
+        }
+        #cart-sidebar-summary ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #cart-sidebar-summary li {
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+        #cart-sidebar-summary li span:last-child {
+            font-weight: bold;
+        }
+        #cart-sidebar-summary .cart-total-mini {
+            font-weight: bold;
+            font-size: 1.1em;
+            text-align: center;
+            color: var(--primary-color);
+            margin-top: 10px;
+        }
+        
+        /* Contador del carrito */
+        .cart-icon-wrapper {
+            position: relative;
+            display: inline-block;
+            font-size: 1.1em;
+        }
+        #cart-counter {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 7px;
+            font-size: 0.8em;
+            font-weight: bold;
+            border: 2px solid var(--secondary-color);
+        }
+
+        /* ==================== CONTENEDOR PRINCIPAL ==================== */
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 25px;
+            padding-left: 280px;
+        }
+
+        /* ==================== SECCIONES GENERALES ==================== */
+        .section {
+            background-color: rgba(0,0,0,0.2);
+            padding: var(--section-padding);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            transition: transform 0.6s, box-shadow 0.6s;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        .section.visible {
+            animation: fadeInOnScroll 1s forwards;
+        }
+        .section:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 40px var(--hover-glow);
+        }
+        h1, h2, h3 { text-align: center; text-shadow: 2px 2px 10px var(--box-shadow-color); padding-bottom: 10px; border-bottom: 2px solid var(--primary-color); margin-bottom: 25px; }
+        h1 { font-size: 2.5em; color: var(--primary-color); }
+        h2 { font-size: 2em; }
+        h3 { font-size: 1.5em; }
+
+        /* ==================== HERO SECTION (SECCIÓN DE INICIO) ==================== */
+        #hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(0);
+            opacity: 1; /* Hero siempre visible */
+            background-color: var(--tertiary-color);
+            position: relative;
+        }
+        #hero h1 {
+            font-size: 3.5em;
+            color: var(--primary-color);
+            text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.9);
+            border-bottom: none;
+            margin-bottom: 20px;
+            font-weight: 900;
+            line-height: 1.2;
+            position: relative;
+            z-index: 2;
+        }
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            z-index: 1;
+        }
+
+        /* ==================== CARRUSEL DE PRODUCTOS DESTACADOS ==================== */
+        #featured-products-container {
+            position: relative;
+            overflow: hidden;
+            padding: 0 20px; /* Espacio para las flechas */
+        }
+        #featured-products {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            scroll-behavior: smooth;
+        }
+        #featured-products::-webkit-scrollbar {
+            display: none;
+        }
+        .featured-item {
+            min-width: 250px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .featured-item:hover {
+            transform: translateY(-5px);
+        }
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1.5em;
+            z-index: 10;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        .carousel-control:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        #prev-featured { left: 0; }
+        #next-featured { right: 0; }
+
+        /* ==================== FILTROS Y BUSQUEDA ==================== */
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        .controls button {
+            padding: 10px 20px;
+            background-color: rgba(255, 152, 0, 0.8);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .controls button:hover, .controls button.active {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        #search-bar {
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid var(--primary-color);
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-color-dark);
+            width: 100%;
+            max-width: 300px;
+            box-sizing: border-box;
+        }
+
+        /* ==================== TARJETA DE PRODUCTO ==================== */
+        .component-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            display: block; /* Aseguramos que se muestre siempre */
+        }
+        .component-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        .price-tag {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #4CAF50;
+            text-align: right;
+        }
+        .rating-stars {
+            color: gold;
+            text-align: right;
+            margin-top: 5px;
+        }
+        .add-to-cart {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        .add-to-cart:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        /* ==================== REDISEÑO DEL CREADOR DE PC ==================== */
+        .component-selection {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+        .component-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            width: 180px;
+            position: relative;
+            display: block; /* Aseguramos que se muestre siempre */
+        }
+        .component-card.selected {
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 0 15px var(--hover-glow);
+            transform: scale(1.05);
+        }
+        .component-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        .component-card h4 {
+            margin: 0;
+            font-size: 1em;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding: 0;
+            border: none;
+        }
+        .component-card p {
+            font-size: 0.9em;
+            margin: 5px 0 0;
+        }
+
+        /* ==================== TABLA DE COMPARACION ==================== */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            color: var(--text-color-dark);
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .comparison-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: bold;
+        }
+        .comparison-table tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        .comparison-table td:first-child {
+            font-weight: bold;
+        }
+        .best-price {
+            background-color: rgba(76, 175, 80, 0.5);
+            font-weight: bold;
+            color: #d8ffd8;
+        }
+        .comparison-link {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .comparison-link:hover {
+            color: #fff;
+            text-shadow: 0 0 5px #fff;
+        }
+
+        /* ==================== NOTIFICACIÓN DE CARRITO ==================== */
+        #cart-notification {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.5s, bottom 0.5s;
+        }
+        #cart-notification.visible {
+            opacity: 1;
+            bottom: 50px;
+        }
+
+        /* ==================== CARRITO DE COMPRAS ==================== */
+        #cart-section {
+            display: block;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin-top: 20px;
+        }
+        #cart-items {
+            list-style: none;
+            padding: 0;
+        }
+        #cart-items li {
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .remove-btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8em;
+            margin-left: 10px;
+            transition: all 0.3s;
+        }
+        .remove-btn:hover {
+            background-color: #c0392b;
+            transform: scale(1.05);
+        }
+        
+        /* ==================== ESTILOS DE OTROS APARTADOS ==================== */
+        .box { border: 2px solid var(--primary-color); padding: 20px; border-radius: 15px; margin: 20px 0; background-color: rgba(255,255,255,0.1); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .warning { border: 3px solid #e74c3c; background-color: rgba(231, 76, 60, 0.1); color: #c0392b; font-weight: bold; text-align: center; animation: pulseBorder 3s infinite; }
+        body.light-mode .box { background-color: rgba(255,255,255,0.05); }
+        #darkModeBtn { position: fixed; top: 10px; right: 10px; width: 90px; height: 40px; background-color: #ff9800; border-radius: 25px; border: 2px solid #e68900; cursor: pointer; display: flex; align-items: center; justify-content: flex-start; padding: 5px; z-index: 1000; transition: all 0.3s; }
+        #darkModeBtn span { width: 30px; height: 30px; background-color: white; border-radius: 50%; transition: all 0.3s; }
+        #darkModeBtn.active { justify-content: flex-end; background-color: #333; }
+        footer { text-align: center; padding: 20px; margin-top: 40px; background-color: rgba(0,0,0,0.2); border-radius: 15px; box-shadow: 0 0 15px rgba(0,0,0,0.3); }
+        #scrollToTopBtn { position: fixed; bottom: 20px; right: 20px; background-color: var(--primary-color); color: white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 1.5em; cursor: pointer; display: none; align-items: center; justify-content: center; box-shadow: 4px 4px 10px rgba(0,0,0,0.3); transition: background-color 0.3s, transform 0.3s; }
+        
+        /* Estilos para el nuevo apartado de Misión */
+        #about-us {
+            text-align: center;
+        }
+
+        /* Estilos para la Calculadora de PC */
+        #pc-builder-section {
+            text-align: center;
+        }
+        #calculator-form {
+            background-color: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+        }
+        #calculator-form select, #calculator-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-color-dark);
+        }
+        #calculator-form h3 {
+            text-align: left;
+            border-bottom: 1px solid var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Estilos para la nueva Calculadora de FPS */
+        #game-fps-calculator-section .calculator-group {
+            background-color: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        #game-fps-calculator-section .calculator-group label,
+        #game-fps-calculator-section .calculator-group select {
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        #game-fps-calculator-section .calculator-group select {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid var(--primary-color);
+            background-color: rgba(255,255,255,0.1);
+            color: var(--text-color-dark);
+        }
+        #fps-result {
+            margin-top: 20px;
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px dashed var(--primary-color);
+            animation: slideInUp 0.5s forwards;
+        }
+
+        /* ==================== ESTILOS PARA LA GUÍA DETALLADA ==================== */
+        .guide-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.4s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            flex-direction: column; /* Cambiado para que no haya imágenes */
+            text-align: center;
+        }
+        .guide-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        .step-content {
+            flex: 1;
+            padding: 0 20px;
+        }
+        .step-content h3 {
+            border-bottom: 2px solid var(--secondary-color);
+            text-align: center;
+            margin-top: 0;
+            padding-bottom: 5px;
+        }
+        .step-content ul {
+            list-style: none;
+            padding-left: 0;
+            text-align: left;
+        }
+        .step-content li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        .step-content li::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.2em;
+        }
+        .driver-warning {
+            border: 3px solid #e74c3c;
+            background-color: rgba(231, 76, 60, 0.1);
+            color: #c0392b;
+            font-weight: bold;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        /* Estilos para el nuevo apartado de consolas */
+        .console-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .console-card {
+            background-color: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* ==================== RESPONSIVE DESIGN ==================== */
+        @media (max-width: 1200px) {
+            main {
+                padding-left: 25px;
+            }
+        }
+        @media (max-width: 768px) {
+            #sidebar-container {
+                position: relative;
+                width: 100%;
+                top: 0;
+                left: 0;
+                max-height: none;
+            }
+            main {
+                padding: 25px;
+            }
+            #hero h1 {
+                font-size: 2.5em;
+            }
+            .step-content {
+                padding: 0;
+            }
+            .guide-step, .guide-step:nth-child(even) {
+                flex-direction: column;
+                text-align: center;
+            }
+            .step-content h3 {
+                text-align: center;
+            }
+            .step-content li::before {
+                position: static;
+                margin-right: 5px;
+            }
+            #darkModeBtn {
+                top: auto;
+                bottom: 10px;
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.5em; }
+            .hero-section {
+                padding: 50px 10px;
+            }
+            .controls {
+                flex-direction: column;
+            }
+            .controls button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="sidebar-container">
+        <details class="sidebar" open>
+            <summary>🚀 Optimización y Guía</summary>
+            <a href="#hero">Inicio</a>
+            <a href="#optimization-guide">Guía de Optimización</a>
+            <a href="#pc-builder-section">Creador de PC</a>
+            <a href="#optimization-step-1">Mantenimiento Básico</a>
+            <a href="#optimization-step-2">Actualización de Drivers</a>
+            <a href="#optimization-step-3">Optimización de Windows</a>
+            <a href="#optimization-step-4">Gestión de la Memoria Virtual</a>
+            <a href="#optimization-step-5">Limpieza del Registro</a>
+            <a href="#optimization-step-6">Configuración de BIOS/UEFI</a>
+            <a href="#optimization-step-7">Solución de Problemas de Red</a>
+            <a href="#optimization-step-8">Herramientas Recomendadas</a>
+            <a href="#optimization-step-9">Consejos de Overclocking</a>
+            <a href="#optimization-step-10">Optimización de Juegos</a>
+        </details>
+        
+        <details class="sidebar" open>
+            <summary>🎯 Herramientas y Cálculos</summary>
+            <a href="#pc-builder-section">Creador de PC</a>
+            <a href="#game-fps-calculator-section">Calculadora de FPS</a>
+            <a href="#price-comparison-section">Comparación de Precios</a>
+        </details>
+
+        <details class="sidebar" open>
+            <summary>🛒 Tienda y Componentes</summary>
+            <a href="#product-catalog-section">Catálogo de Productos</a>
+            <a href="#pc-usadas-section">PC Usadas</a>
+            <a href="#netbooks-section">Netbooks</a>
+            <a href="#playstation-section">Consolas y Juegos</a>
+            <a href="#tiendas-section">Tiendas de Componentes</a>
+        </details>
+
+        <details class="sidebar" open>
+            <summary>🛒 Carrito de Compras <span id="cart-counter">0</span></summary>
+            <div id="cart-sidebar-summary">
+                <ul id="cart-summary-list">
+                    </ul>
+                <div id="cart-total-display" class="cart-total-mini">Total: $ARS 0</div>
+                <a href="#shopping-cart" class="add-to-cart">Ver Carrito</a>
+            </div>
+        </details>
+    </div>
+
+    <main>
+        
+        <section id="hero" class="section">
+            <h1>Página dedicada a PC Gamer hecha por Jerónimo</h1>
+            <p>Descubre los mejores trucos, componentes y guías para llevar tu equipo al máximo rendimiento.</p>
+        </section>
+
+        <section id="about-us" class="section visible">
+            <h2>Nuestra Misión</h2>
+            <p>
+                En esta página, nos dedicamos a desmitificar el mundo del hardware y el software para que cualquiera, desde el principiante hasta el entusiasta, pueda exprimir al máximo el rendimiento de su PC.
+            </p>
+            <p>
+                Creemos que el conocimiento debe ser accesible y que cada gamer merece una experiencia fluida, sin importar su presupuesto. Por eso, te ofrecemos guías completas, información sobre componentes de calidad y opciones para todos los bolsillos.
+            </p>
+        </section>
+
+        <section id="optimization-guide" class="section visible">
+            <h2>Guía de Optimización - Paso a Paso</h2>
+
+            <div class="guide-step" id="optimization-step-1">
+                <div class="step-content">
+                    <h3>Paso 1: Mantenimiento del Sistema</h3>
+                    <p>La base de una PC rápida es un sistema limpio. Antes de pensar en hardware, asegúrate de que tu software esté en orden. Este paso es fundamental y no puede ser omitido.</p>
+                    <ul>
+                        <li><span class="icon"></span> **Limpieza de Archivos Temporales:** Usa la herramienta de "Limpieza de disco" de Windows para eliminar archivos basura.</li>
+                        <li><span class="icon"></span> **Desfragmentación/Optimización de Discos:** Si usas un HDD, desfragmentar mejora el acceso. Si tienes un SSD, la optimización es vital.</li>
+                        <li><span class="icon"></span> **Gestión de Programas de Inicio:** Abre el "Administrador de tareas" (Ctrl + Shift + Esc) y desactiva los programas innecesarios que se inician con Windows.</li>
+                        <li><span class="icon"></span> **Escaneo de Malware:** Corre un escaneo completo con tu antivirus de confianza para eliminar cualquier amenaza oculta.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="guide-step" id="optimization-step-2">
+                <div class="step-content">
+                    <h3>Paso 2: Actualización de Drivers</h3>
+                    <p>Los drivers son la conexión entre tu sistema operativo y tus componentes. Mantenerlos actualizados es vital para el rendimiento, especialmente para la tarjeta gráfica y el chipset. Un driver viejo puede causar cuelgues o bajo rendimiento.</p>
+                    <div class="driver-warning">
+                        <strong>¡Cuidado!</strong> No uses programas de terceros para actualizar drivers como Driver Booster. Estos pueden instalar software no deseado o drivers incorrectos. Siempre descarga los drivers desde las páginas oficiales de los fabricantes:
+                        <ul>
+                            <li><a href="https://www.nvidia.com/es-la/geforce/drivers/" target="_blank" rel="noopener noreferrer">NVIDIA</a></li>
+                            <li><a href="https://www.amd.com/es/support" target="_blank" rel="noopener noreferrer">AMD</a></li>
+                            <li><a href="https://www.intel.la/content/www/xl/es/download-center/default.html" target="_blank" rel="noopener noreferrer">Intel</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="guide-step" id="optimization-step-3">
+                <div class="step-content">
+                    <h3>Paso 3: Optimización de Windows 10/11</h3>
+                    <p>Windows tiene muchas funciones en segundo plano que consumen recursos. Desactiva las que no usas para liberar memoria y CPU.</p>
+                    <ul>
+                        <li><span class="icon"></span> **Modo de Juego:** Actívalo en la configuración de Windows para priorizar tus juegos.</li>
+                        <li><span class="icon"></span> **Desactivar Efectos Visuales:** Ve a "Configuración avanzada del sistema" y en el apartado de rendimiento, selecciona "Ajustar para obtener el mejor rendimiento".</li>
+                        <li><span class="icon"></span> **Control de Aplicaciones en Segundo Plano:** En la configuración de privacidad, desactiva las apps que no necesitas que se ejecuten en segundo plano.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="guide-step" id="optimization-step-4">
+                <div class="step-content">
+                    <h3>Paso 4: Gestión de la Memoria Virtual</h3>
+                    <p>La memoria virtual actúa como una extensión de la RAM. Si tienes un SSD, optimizarla puede mejorar el rendimiento general del sistema al manejar archivos de paginación de manera más eficiente.</p>
+                    <ul>
+                        <li><span class="icon"></span> **Determina el tamaño óptimo:** Calcula el tamaño inicial y máximo para tu archivo de paginación según la RAM instalada.</li>
+                        <li><span class="icon"></span> **Ubicación en el SSD:** Asegúrate de que tu archivo de paginación esté en la unidad SSD principal para obtener la mayor velocidad posible.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="guide-step" id="optimization-step-5">
+                <div class="step-content">
+                    <h3>Paso 5: Limpieza del Registro de Windows</h3>
+                    <p>Con el tiempo, el registro se llena de entradas obsoletas y basura. Usar una herramienta de limpieza puede mejorar la estabilidad del sistema, aunque se debe hacer con precaución.</p>
+                    <div class="box warning">
+                        <strong>¡Advertencia!</strong> Limpiar el registro es arriesgado. Siempre crea una copia de seguridad antes de usar cualquier software de limpieza.
+                    </div>
+                </div>
+            </div>
+
+            <div class="guide-step" id="optimization-step-6">
+                <div class="step-content">
+                    <h3>Paso 6: Configuración Avanzada de BIOS/UEFI</h3>
+                    <p>Acceder a la BIOS/UEFI te permite controlar directamente el hardware. Aquí puedes activar funciones clave para el rendimiento de tu PC.</p>
+                    <ul>
+                        <li><span class="icon"></span> **Activar XMP/DOCP:** Permite que tu RAM funcione a la velocidad anunciada.</li>
+                        <li><span class="icon"></span> **Actualizar la BIOS:** Las nuevas versiones pueden mejorar la compatibilidad y el rendimiento de tus componentes.</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </section>
+
+        <section id="pc-builder-section" class="section visible">
+            <h2>🛠️ Creador de PC y Calculador de Costo</h2>
+            <p>Selecciona los componentes para armar tu PC ideal y ver el costo estimado en pesos argentinos. ¡Haz clic en cada uno para agregarlo!</p>
+
+            <form id="calculator-form">
+                
+                <div class="component-group">
+                    <h3>Procesador (CPU)</h3>
+                    <div class="component-selection" data-component-type="cpu">
+                        <div class="component-card" data-component-id="cpu1" data-price="1200000" data-wattage="125">
+                            <h4>Intel Core i9-14900K</h4>
+                            <p>$ARS 1.200.000 - 125W</p>
+                        </div>
+                        <div class="component-card" data-component-id="cpu2" data-price="1100000" data-wattage="170">
+                            <h4>AMD Ryzen 9 7950X</h4>
+                            <p>$ARS 1.100.000 - 170W</p>
+                        </div>
+                        <div class="component-card" data-component-id="cpu3" data-price="950000" data-wattage="125">
+                            <h4>Intel Core i7-14700K</h4>
+                            <p>$ARS 950.000 - 125W</p>
+                        </div>
+                        <div class="component-card" data-component-id="cpu4" data-price="850000" data-wattage="105">
+                            <h4>AMD Ryzen 7 7700X</h4>
+                            <p>$ARS 850.000 - 105W</p>
+                        </div>
+                        <div class="component-card" data-component-id="cpu5" data-price="750000" data-wattage="65">
+                            <h4>Intel Core i5-14600K</h4>
+                            <p>$ARS 750.000 - 65W</p>
+                        </div>
+                        <div class="component-card" data-component-id="cpu6" data-price="600000" data-wattage="65">
+                            <h4>AMD Ryzen 5 7600X</h4>
+                            <p>$ARS 600.000 - 65W</p>
+                        </div>
+                        <div class="component-card" data-component-id="cpu7" data-price="500000" data-wattage="65">
+                            <h4>Intel Core i5-12400F</h4>
+                            <p>$ARS 500.000 - 65W</p>
+                        </div>
+                        <div class="component-card" data-component-id="cpu8" data-price="420000" data-wattage="65">
+                            <h4>AMD Ryzen 5 5600X</h4>
+                            <p>$ARS 420.000 - 65W</p>
+                        </div>
+                        <div class="component-card" data-component-id="cpu9" data-price="350000" data-wattage="65">
+                            <h4>Intel Core i3-12100F</h4>
+                            <p>$ARS 350.000 - 65W</p>
+                        </div>
+                        <div class="component-card" data-component-id="cpu10" data-price="250000" data-wattage="65">
+                            <h4>AMD Ryzen 3 4100</h4>
+                            <p>$ARS 250.000 - 65W</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-group">
+                    <h3>Tarjeta Gráfica (GPU)</h3>
+                    <div class="component-selection" data-component-type="gpu">
+                        <div class="component-card" data-component-id="gpu1" data-price="3500000" data-wattage="450">
+                            <h4>NVIDIA GeForce RTX 4090</h4>
+                            <p>$ARS 3.500.000 - 450W</p>
+                        </div>
+                        <div class="component-card" data-component-id="gpu2" data-price="2800000" data-wattage="320">
+                            <h4>NVIDIA GeForce RTX 4080S</h4>
+                            <p>$ARS 2.800.000 - 320W</p>
+                        </div>
+                        <div class="component-card" data-component-id="gpu3" data-price="2100000" data-wattage="285">
+                            <h4>NVIDIA GeForce RTX 4070 Ti S</h4>
+                            <p>$ARS 2.100.000 - 285W</p>
+                        </div>
+                        <div class="component-card" data-component-id="gpu4" data-price="1800000" data-wattage="200">
+                            <h4>NVIDIA GeForce RTX 4070 S</h4>
+                            <p>$ARS 1.800.000 - 200W</p>
+                        </div>
+                        <div class="component-card" data-component-id="gpu5" data-price="1400000" data-wattage="160">
+                            <h4>NVIDIA GeForce RTX 4060 Ti</h4>
+                            <p>$ARS 1.400.000 - 160W</p>
+                        </div>
+                        <div class="component-card" data-component-id="gpu6" data-price="2500000" data-wattage="350">
+                            <h4>AMD Radeon RX 7900 XTX</h4>
+                            <p>$ARS 2.500.000 - 350W</p>
+                        </div>
+                        <div class="component-card" data-component-id="gpu7" data-price="2000000" data-wattage="300">
+                            <h4>AMD Radeon RX 7900 XT</h4>
+                            <p>$ARS 2.000.000 - 300W</p>
+                        </div>
+                        <div class="component-card" data-component-id="gpu8" data-price="1300000" data-wattage="260">
+                            <h4>AMD Radeon RX 7800 XT</h4>
+                            <p>$ARS 1.300.000 - 260W</p>
+                        </div>
+                        <div class="component-card" data-component-id="gpu9" data-price="950000" data-wattage="180">
+                            <h4>NVIDIA GeForce RTX 3060</h4>
+                            <p>$ARS 950.000 - 180W</p>
+                        </div>
+                        <div class="component-card" data-component-id="gpu10" data-price="800000" data-wattage="130">
+                            <h4>AMD Radeon RX 6600 XT</h4>
+                            <p>$ARS 800.000 - 130W</p>
+                        </div>
+                        <div class="component-card" data-component-id="gpu11" data-price="600000" data-wattage="100">
+                            <h4>NVIDIA GeForce GTX 1660 Super</h4>
+                            <p>$ARS 600.000 - 100W</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-group">
+                    <h3>Memoria RAM</h3>
+                    <div class="component-selection" data-component-type="ram">
+                        <div class="component-card" data-component-id="ram1" data-price="350000" data-wattage="10">
+                            <h4>DDR5 Corsair Vengeance 32GB</h4>
+                            <p>$ARS 350.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="ram2" data-price="200000" data-wattage="5">
+                            <h4>DDR4 HyperX Fury 16GB</h4>
+                            <p>$ARS 200.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="ram3" data-price="600000" data-wattage="15">
+                            <h4>DDR5 G.Skill Trident Z5 64GB</h4>
+                            <p>$ARS 600.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="ram4" data-price="280000" data-wattage="8">
+                            <h4>DDR5 Kingston Fury 32GB</h4>
+                            <p>$ARS 280.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="ram5" data-price="150000" data-wattage="4">
+                            <h4>DDR4 Corsair Vengeance 8GB</h4>
+                            <p>$ARS 150.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-group">
+                    <h3>Almacenamiento (SSD/HDD)</h3>
+                    <div class="component-selection" data-component-type="storage">
+                        <div class="component-card" data-component-id="storage1" data-price="450000" data-wattage="10">
+                            <h4>SSD Samsung 990 Pro 1TB M.2</h4>
+                            <p>$ARS 450.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="storage2" data-price="250000" data-wattage="5">
+                            <h4>SSD Crucial P3 500GB M.2</h4>
+                            <p>$ARS 250.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="storage3" data-price="700000" data-wattage="12">
+                            <h4>SSD Kingston KC3000 2TB M.2</h4>
+                            <p>$ARS 700.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="storage4" data-price="180000" data-wattage="8">
+                            <h4>HDD Western Digital 1TB</h4>
+                            <p>$ARS 180.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="storage5" data-price="350000" data-wattage="10">
+                            <h4>SSD Crucial P5 Plus 1TB</h4>
+                            <p>$ARS 350.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="storage6" data-price="550000" data-wattage="12">
+                            <h4>HDD Seagate Barracuda 4TB</h4>
+                            <p>$ARS 550.000</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-group">
+                    <h3>Placa Madre</h3>
+                    <div class="component-selection" data-component-type="motherboard">
+                        <div class="component-card" data-component-id="mb1" data-price="600000" data-wattage="20">
+                            <h4>MSI Z790 Tomahawk</h4>
+                            <p>$ARS 600.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="mb2" data-price="500000" data-wattage="15">
+                            <h4>Gigabyte B650 Aorus Elite</h4>
+                            <p>$ARS 500.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="mb3" data-price="450000" data-wattage="18">
+                            <h4>ASUS ROG Strix B650E-F</h4>
+                            <p>$ARS 450.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="mb4" data-price="380000" data-wattage="12">
+                            <h4>MSI B550 GAMING PLUS</h4>
+                            <p>$ARS 380.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-group">
+                    <h3>Fuente de Poder (PSU)</h3>
+                    <div class="component-selection" data-component-type="psu">
+                        <div class="component-card" data-component-id="psu1" data-price="400000" data-wattage="0">
+                            <h4>Corsair RM850x 850W</h4>
+                            <p>$ARS 400.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="psu2" data-price="550000" data-wattage="0">
+                            <h4>Seasonic Focus GX-1000</h4>
+                            <p>$ARS 550.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="psu3" data-price="300000" data-wattage="0">
+                            <h4>EVGA SuperNOVA 750W</h4>
+                            <p>$ARS 300.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="psu4" data-price="220000" data-wattage="0">
+                            <h4>Cooler Master MWE Gold 650W</h4>
+                            <p>$ARS 220.000</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-group">
+                    <h3>Monitor</h3>
+                    <div class="component-selection" data-component-type="monitor">
+                        <div class="component-card" data-component-id="mon1" data-price="750000" data-wattage="40">
+                            <h4>Monitor Gaming 144Hz</h4>
+                            <p>$ARS 750.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="mon2" data-price="1200000" data-wattage="50">
+                            <h4>Monitor 4K ASUS TUF Gaming</h4>
+                            <p>$ARS 1.200.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="mon3" data-price="550000" data-wattage="30">
+                            <h4>Monitor 24" Full HD</h4>
+                            <p>$ARS 550.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="mon4" data-price="950000" data-wattage="45">
+                            <h4>Monitor Curvo Samsung 240Hz</h4>
+                            <p>$ARS 950.000</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-group">
+                    <h3>Teclado</h3>
+                    <div class="component-selection" data-component-type="keyboard">
+                        <div class="component-card" data-component-id="key1" data-price="180000" data-wattage="5">
+                            <h4>Teclado Mecánico HyperX</h4>
+                            <p>$ARS 180.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="key2" data-price="150000" data-wattage="4">
+                            <h4>Teclado Redragon K552 RGB</h4>
+                            <p>$ARS 150.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="key3" data-price="250000" data-wattage="6">
+                            <h4>Teclado Logitech G Pro X</h4>
+                            <p>$ARS 250.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="key4" data-price="120000" data-wattage="3">
+                            <h4>Teclado T-Dagger T-TGK315</h4>
+                            <p>$ARS 120.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-group">
+                    <h3>Mouse</h3>
+                    <div class="component-selection" data-component-type="mouse">
+                        <div class="component-card" data-component-id="mou1" data-price="90000" data-wattage="2">
+                            <h4>Mouse Razer DeathAdder V3</h4>
+                            <p>$ARS 90.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="mou2" data-price="80000" data-wattage="2">
+                            <h4>Mouse Logitech G Pro Wireless</h4>
+                            <p>$ARS 80.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="mou3" data-price="55000" data-wattage="2">
+                            <h4>Mouse Redragon M908 Impact</h4>
+                            <p>$ARS 55.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="mou4" data-price="40000" data-wattage="2">
+                            <h4>Mouse T-Dagger T-TGM106</h4>
+                            <p>$ARS 40.000</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-group">
+                    <h3>Mousepad</h3>
+                    <div class="component-selection" data-component-type="mousepad">
+                        <div class="component-card" data-component-id="pad1" data-price="25000" data-wattage="0">
+                            <h4>HyperX Fury S Pro XL</h4>
+                            <p>$ARS 25.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="pad2" data-price="22000" data-wattage="0">
+                            <h4>SteelSeries QcK Edge</h4>
+                            <p>$ARS 22.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="pad3" data-price="35000" data-wattage="0">
+                            <h4>Logitech G840 XL</h4>
+                            <p>$ARS 35.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-group">
+                    <h3>Mesa Gamer</h3>
+                    <div class="component-selection" data-component-type="desk">
+                        <div class="component-card" data-component-id="desk1" data-price="350000" data-wattage="0">
+                            <h4>Mesa Gamer L-Shaped</h4>
+                            <p>$ARS 350.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="desk2" data-price="250000" data-wattage="0">
+                            <h4>Mesa Gamer Redragon DSK-300</h4>
+                            <p>$ARS 250.000</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-group">
+                    <h3>Silla Gamer</h3>
+                    <div class="component-selection" data-component-type="chair">
+                        <div class="component-card" data-component-id="chair1" data-price="200000" data-wattage="0">
+                            <h4>Silla Gamer Noga RGB</h4>
+                            <p>$ARS 200.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="chair2" data-price="180000" data-wattage="0">
+                            <h4>Silla Gamer Sentey Pro Series</h4>
+                            <p>$ARS 180.000</p>
+                        </div>
+                        <div class="component-card" data-component-id="chair3" data-price="300000" data-wattage="0">
+                            <h4>Silla Gamer Corsair T3 Rush</h4>
+                            <p>$ARS 300.000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box" style="margin-top: 40px; text-align: left;">
+                    <div id="cost-result">
+                        <h3>Resumen del Presupuesto:</h3>
+                        <p>Total de Vatios Consumidos: <span id="total-wattage">0W</span></p>
+                        <p>Costo Estimado: <span id="total-cost">$ARS 0</span></p>
+                    </div>
+                    <button type="button" id="addToCartBtn" class="add-to-cart" style="width: 100%; margin-top: 20px;">
+                        Añadir a Carrito
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section id="game-fps-calculator-section" class="section visible">
+            <h2>🎮 Calculadora de FPS</h2>
+            <p>Elige tus componentes para estimar cuántos FPS podrías obtener en los juegos más populares. ¡Es una simulación para que tengas una idea!</p>
+            <div class="calculator-group">
+                <h3>Elige tu Configuración</h3>
+                <label for="fps-cpu-select">Procesador (CPU):</label>
+                <select id="fps-cpu-select">
+                    <option value="i9">Intel Core i9-14900K</option>
+                    <option value="i7">Intel Core i7-14700K</option>
+                    <option value="i5">Intel Core i5-14600K</option>
+                    <option value="i3">Intel Core i3-12100F</option>
+                    <option value="r9">AMD Ryzen 9 7950X</option>
+                    <option value="r7">AMD Ryzen 7 7700X</option>
+                    <option value="r5">AMD Ryzen 5 7600X</option>
+                </select>
+
+                <label for="fps-gpu-select">Tarjeta Gráfica (GPU):</label>
+                <select id="fps-gpu-select">
+                    <option value="rtx4090">NVIDIA GeForce RTX 4090</option>
+                    <option value="rtx4080s">NVIDIA GeForce RTX 4080S</option>
+                    <option value="rtx4070tis">NVIDIA GeForce RTX 4070 Ti S</option>
+                    <option value="rtx4070s">NVIDIA GeForce RTX 4070 S</option>
+                    <option value="rtx4060ti">NVIDIA GeForce RTX 4060 Ti</option>
+                    <option value="rtx3060">NVIDIA GeForce RTX 3060</option>
+                    <option value="rx7900xtx">AMD Radeon RX 7900 XTX</option>
+                    <option value="rx7800xt">AMD Radeon RX 7800 XT</option>
+                    <option value="rx6600xt">AMD Radeon RX 6600 XT</option>
+                </select>
+
+                <label for="fps-game-select">Juego:</label>
+                <select id="fps-game-select">
+                    <option value="warzone">Call of Duty: Warzone</option>
+                    <option value="cyberpunk">Cyberpunk 2077</option>
+                    <option value="gta5">Grand Theft Auto V</option>
+                    <option value="valorant">Valorant</option>
+                    <option value="fortnite">Fortnite</option>
+                </select>
+
+                <label for="fps-res-select">Resolución:</label>
+                <select id="fps-res-select">
+                    <option value="1080p">1080p (Full HD)</option>
+                    <option value="1440p">1440p (2K)</option>
+                    <option value="4k">2160p (4K)</option>
+                </select>
+                
+                <button type="button" id="calculate-fps-btn" class="add-to-cart" style="width: 100%;">
+                    Calcular FPS
+                </button>
+            </div>
+            
+            <div id="fps-result" style="display: none;">
+                </div>
+        </section>
+
+        <section id="price-comparison-section" class="section visible">
+            <h2>📊 Comparación de Precios por Tienda</h2>
+            <p>Compara precios de componentes clave en las tiendas más populares de Argentina. ¡Encuentra el mejor precio!</p>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Componente</th>
+                        <th><a href="https://compragamer.com" target="_blank">CompraGamer</a></th>
+                        <th><a href="https://www.maximus.com.ar" target="_blank">Maximus</a></th>
+                        <th><a href="https://www.mercadolibre.com.ar" target="_blank">Mercado Libre</a></th>
+                        <th><a href="https://ar.temu.com" target="_blank">Temu</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Intel Core i7-14700K</td>
+                        <td>$ARS 950.000</td>
+                        <td class="best-price">$ARS 930.000</td>
+                        <td>$ARS 980.000</td>
+                        <td>$ARS 995.000</td>
+                    </tr>
+                    <tr>
+                        <td>NVIDIA RTX 4070 Ti Super</td>
+                        <td>$ARS 2.100.000</td>
+                        <td>$ARS 2.150.000</td>
+                        <td>$ARS 2.250.000</td>
+                        <td class="best-price">$ARS 2.050.000</td>
+                    </tr>
+                    <tr>
+                        <td>AMD Radeon RX 7800 XT</td>
+                        <td class="best-price">$ARS 1.300.000</td>
+                        <td>$ARS 1.350.000</td>
+                        <td>$ARS 1.400.000</td>
+                        <td>$ARS 1.380.000</td>
+                    </tr>
+                    <tr>
+                        <td>RAM DDR5 32GB</td>
+                        <td>$ARS 350.000</td>
+                        <td class="best-price">$ARS 345.000</td>
+                        <td>$ARS 360.000</td>
+                        <td>$ARS 370.000</td>
+                    </tr>
+                    <tr>
+                        <td>SSD Kingston 2TB M.2</td>
+                        <td>$ARS 700.000</td>
+                        <td>$ARS 720.000</td>
+                        <td class="best-price">$ARS 680.000</td>
+                        <td>$ARS 710.000</td>
+                    </tr>
+                    <tr>
+                        <td>Fuente Corsair 850W</td>
+                        <td>$ARS 400.000</td>
+                        <td>$ARS 415.000</td>
+                        <td>$ARS 430.000</td>
+                        <td class="best-price">$ARS 390.000</td>
+                    </tr>
+                    <tr>
+                        <td>Gabinete Redragon</td>
+                        <td>$ARS 150.000</td>
+                        <td class="best-price">$ARS 145.000</td>
+                        <td>$ARS 160.000</td>
+                        <td>$ARS 155.000</td>
+                    </tr>
+                    <tr>
+                        <td>Silla Gamer Corsair</td>
+                        <td>$ARS 300.000</td>
+                        <td>$ARS 310.000</td>
+                        <td class="best-price">$ARS 280.000</td>
+                        <td>$ARS 295.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="product-catalog-section" class="section visible">
+            <h2>🛍️ Catálogo de Productos</h2>
+            <div class="controls">
+                <input type="text" id="search-bar" placeholder="Buscar por nombre...">
+                <button type="button" class="filter-btn active" data-category="all">Todos</button>
+                <button type="button" class="filter-btn" data-category="cpu">CPU</button>
+                <button type="button" class="filter-btn" data-category="gpu">GPU</button>
+                <button type="button" class="filter-btn" data-category="ram">RAM</button>
+                <button type="button" class="filter-btn" data-category="storage">Almacenamiento</button>
+                <button type="button" class="filter-btn" data-category="motherboard">Placa Madre</button>
+                <button type="button" class="filter-btn" data-category="psu">Fuente</button>
+                <button type="button" class="filter-btn" data-category="peripherals">Periféricos</button>
+                <button type="button" class="filter-btn" data-category="consoles">Consolas</button>
+                <button type="button" class="filter-btn" data-category="games">Juegos</button>
+                <button type="button" class="filter-btn" data-category="accessories">Accesorios</button>
+            </div>
+            <div id="product-list">
+                </div>
+        </section>
+
+        <section id="playstation-section" class="section visible">
+            <h2>🎮 Consolas y Juegos</h2>
+            <p>
+                No todo es PC. Aquí te traemos una selección de lo mejor de PlayStation, con las consolas, los juegos más recientes y los clásicos que no pueden faltar.
+            </p>
+            <div class="console-list">
+                <div class="console-card">
+                    <h3>PlayStation 5 (Edición Digital)</h3>
+                    <p>La consola de última generación sin lector de discos. Discos, gráficos 4K y ray-tracing. Ideal para el futuro del gaming.</p>
+                    <div class="price-tag">$ARS 1.200.000</div>
+                    <button class="add-to-cart" data-id="ps5-digital" data-name="PlayStation 5 Digital" data-price="1200000">
+                        Añadir al Carrito
+                    </button>
+                </div>
+                <div class="console-card">
+                    <h3>PlayStation 5 (Edición Estándar)</h3>
+                    <p>Con lector de Blu-ray 4K. Juega a tus títulos físicos y de la PS4. La mejor opción para coleccionistas.</p>
+                    <div class="price-tag">$ARS 1.350.000</div>
+                    <button class="add-to-cart" data-id="ps5-disc" data-name="PlayStation 5 Estándar" data-price="1350000">
+                        Añadir al Carrito
+                    </button>
+                </div>
+                <div class="console-card">
+                    <h3>PlayStation 4 Slim</h3>
+                    <p>La opción más económica para disfrutar del extenso catálogo de juegos de la generación anterior.</p>
+                    <div class="price-tag">$ARS 600.000</div>
+                    <button class="add-to-cart" data-id="ps4-slim" data-name="PlayStation 4 Slim" data-price="600000">
+                        Añadir al Carrito
+                    </button>
+                </div>
+                <div class="console-card">
+                    <h3>Juego: God of War Ragnarök (PS5)</h3>
+                    <p>La aclamada aventura de Kratos y Atreus. Versión para la PS5.</p>
+                    <div class="price-tag">$ARS 80.000</div>
+                    <button class="add-to-cart" data-id="ps5-gow" data-name="God of War Ragnarök (PS5)" data-price="80000">
+                        Añadir al Carrito
+                    </button>
+                </div>
+                <div class="console-card">
+                    <h3>Juego: FIFA 25 (PS5)</h3>
+                    <p>El juego de fútbol más popular del mundo, con equipos y estadios actualizados.</p>
+                    <div class="price-tag">$ARS 95.000</div>
+                    <button class="add-to-cart" data-id="ps5-fifa" data-name="FIFA 25 (PS5)" data-price="95000">
+                        Añadir al Carrito
+                    </button>
+                </div>
+                <div class="console-card">
+                    <h3>Joystick DualSense PS5</h3>
+                    <p>El control oficial de la PS5 con retroalimentación háptica y gatillos adaptativos.</p>
+                    <div class="price-tag">$ARS 110.000</div>
+                    <button class="add-to-cart" data-id="ps5-joystick" data-name="Joystick DualSense PS5" data-price="110000">
+                        Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="pc-usadas-section" class="section visible">
+            <h2>💻 PC Usadas y Reacondicionadas</h2>
+            <p>
+                Encuentra equipos de alto rendimiento a precios accesibles. Todas nuestras PC usadas son probadas y garantizadas.
+            </p>
+            <div id="used-pc-list">
+                <div class="component-item show" data-category="pc-usadas">
+                    <h3>PC Gaming de Segunda Mano</h3>
+                    <p><strong>Componentes:</strong> Intel Core i7-10700K, NVIDIA RTX 3070, 16GB RAM, 1TB SSD.</p>
+                    <p><strong>Estado:</strong> Excelente, poco uso.</p>
+                    <div class="price-tag">$ARS 1.100.000</div>
+                    <button class="add-to-cart" data-id="used-pc-1" data-name="PC Usada (RTX 3070)" data-price="1100000">
+                        Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="netbooks-section" class="section visible">
+            <h2>🎒 Netbooks y Laptops</h2>
+            <p>
+                Laptops ligeras y potentes, ideales para el trabajo o el estudio.
+            </p>
+            <div id="netbook-list">
+                <div class="component-item show" data-category="netbooks">
+                    <h3>HP Aero 13</h3>
+                    <p><strong>Especificaciones:</strong> AMD Ryzen 5, 8GB RAM, 256GB SSD. Ultraligera.</p>
+                    <div class="price-tag">$ARS 600.000</div>
+                    <button class="add-to-cart" data-id="netbook-1" data-name="Netbook HP Aero 13" data-price="600000">
+                        Añadir al Carrito
+                    </button>
+                </div>
+                <div class="component-item show" data-category="netbooks">
+                    <h3>Acer Swift X</h3>
+                    <p><strong>Especificaciones:</strong> Intel Core i7, 16GB RAM, 512GB SSD. Pantalla 4K.</p>
+                    <div class="price-tag">$ARS 980.000</div>
+                    <button class="add-to-cart" data-id="netbook-2" data-name="Netbook Acer Swift X" data-price="980000">
+                        Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="tiendas-section" class="section visible">
+            <h2>🏬 Tiendas de Componentes Recomendadas</h2>
+            <p>
+                Sabemos lo importante que es comprar en tiendas de confianza. Aquí te dejamos una lista de las mejores opciones para armar tu PC con seguridad y garantía.
+            </p>
+            <ul>
+                <li><a href="https://compragamer.com" target="_blank" rel="noopener noreferrer">CompraGamer</a> - Una de las tiendas más conocidas en Argentina, con excelente reputación y precios competitivos.</li>
+                <li><a href="https://www.maximus.com.ar" target="_blank" rel="noopener noreferrer">Maximus Gaming</a> - Especialistas en hardware de alta gama y periféricos de última generación.</li>
+                <li><a href="https://www.mercadolibre.com.ar" target="_blank" rel="noopener noreferrer">Mercado Libre Argentina</a> - Variedad y ofertas de todo tipo de componentes, ideal para buscar oportunidades.</li>
+                <li><a href="https://ar.temu.com" target="_blank" rel="noopener noreferrer">Temu</a> - Plataforma de compras internacionales con precios muy bajos, ideal para periféricos.</li>
+                <li><a href="https://www.gezatek.com.ar" target="_blank" rel="noopener noreferrer">Gezatek</a> - Tienda especializada con amplia selección de hardware de alta gama.</li>
+                <li><a href="https://www.fullh4rd.com.ar" target="_blank" rel="noopener noreferrer">FullH4rd</a> - Componentes y armado de PC a medida.</li>
+            </ul>
+        </section>
+
+        <section id="shopping-cart" class="section visible">
+            <h2>🛒 Carrito de Compras</h2>
+            <div id="cart-content">
+                <ul id="cart-items">
+                    </ul>
+                <div id="cart-total" style="font-size: 1.5em; font-weight: bold; text-align: right; margin-top: 20px;">
+                    Total: <span id="final-cart-total">$ARS 0</span>
+                </div>
+                <button id="checkout-btn" class="add-to-cart" style="width: 100%; margin-top: 20px;">
+                    Finalizar Compra
+                </button>
+            </div>
+        </section>
+
+    </main>
+    
+    <div id="cart-notification">
+        Producto añadido al carrito.
+    </div>
+
+    <div id="darkModeBtn">
+        <span></span>
+    </div>
+
+    <button id="scrollToTopBtn">↑</button>
+
+    <footer>
+        <p>
+            © 2025 Guía de Optimización PC Épica. Todos los derechos reservados.
+        </p>
+    </footer>
+
+    <script>
+        //
+        // ================================================================================
+        // | Archivo de Scripts Épicos - Versión 2000+ líneas, superamos la meta
+        // |
+        // | Este archivo maneja toda la lógica dinámica de la página, desde el modo oscuro
+        // | hasta el carrito de compras y el calculador de PC.
+        // |
+        // ================================================================================
+        //
+
+        // ==================== LÓGICA DE DETECCIÓN DE SCROLL PARA ANIMACIONES ====================
+        const sections = document.querySelectorAll('.section');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // ==================== LÓGICA DEL BOTÓN DE MODO OSCURO ====================
+        const darkModeBtn = document.getElementById('darkModeBtn');
+        const body = document.body;
+
+        darkModeBtn.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            darkModeBtn.classList.toggle('active');
+        });
+
+        // ==================== LÓGICA DEL BOTÓN DE SCROLL HACIA ARRIBA ====================
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.style.display = 'flex';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // ==================== LÓGICA DEL CARRITO DE COMPRAS ====================
+        let cart = [];
+        const cartCounter = document.getElementById('cart-counter');
+        const cartSummaryList = document.getElementById('cart-summary-list');
+        const cartTotalDisplay = document.getElementById('cart-total-display');
+        const cartNotification = document.getElementById('cart-notification');
+        const cartItemsList = document.getElementById('cart-items');
+        const finalCartTotalSpan = document.getElementById('final-cart-total');
+
+        const formatPrice = (price) => {
+            return new Intl.NumberFormat('es-AR', {
+                style: 'currency',
+                currency: 'ARS',
+                minimumFractionDigits: 0
+            }).format(price);
+        };
+
+        const updateCartDisplay = () => {
+            cartCounter.textContent = cart.length;
+            
+            cartSummaryList.innerHTML = '';
+            cartItemsList.innerHTML = '';
+            let total = 0;
+
+            if (cart.length === 0) {
+                cartSummaryList.innerHTML = '<li>El carrito está vacío.</li>';
+                cartItemsList.innerHTML = '<li>El carrito está vacío.</li>';
+                cartTotalDisplay.textContent = 'Total: ' + formatPrice(0);
+                finalCartTotalSpan.textContent = formatPrice(0);
+                return;
+            }
+
+            cart.forEach(item => {
+                const liSummary = document.createElement('li');
+                liSummary.innerHTML = `<span>${item.name}</span> <span>${formatPrice(item.price)}</span>`;
+                cartSummaryList.appendChild(liSummary);
+
+                const liFull = document.createElement('li');
+                liFull.innerHTML = `<span>${item.name} - ${formatPrice(item.price)}</span>`;
+                const removeBtn = document.createElement('button');
+                removeBtn.className = 'remove-btn';
+                removeBtn.textContent = 'Eliminar';
+                removeBtn.onclick = () => removeFromCart(item.id);
+                liFull.appendChild(removeBtn);
+                cartItemsList.appendChild(liFull);
+
+                total += item.price;
+            });
+
+            cartTotalDisplay.textContent = `Total: ${formatPrice(total)}`;
+            finalCartTotalSpan.textContent = formatPrice(total);
+        };
+
+        const addToCart = (id, name, price) => {
+            const item = { id, name, price };
+            cart.push(item);
+            updateCartDisplay();
+            showCartNotification();
+        };
+
+        const removeFromCart = (id) => {
+            const itemIndex = cart.findIndex(item => item.id === id);
+            if (itemIndex > -1) {
+                cart.splice(itemIndex, 1);
+                updateCartDisplay();
+            }
+        };
+
+        const showCartNotification = () => {
+            cartNotification.classList.add('visible');
+            setTimeout(() => {
+                cartNotification.classList.remove('visible');
+            }, 2000);
+        };
+
+        // Escuchadores de eventos para los botones "Añadir al Carrito"
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const id = e.target.getAttribute('data-id');
+                const name = e.target.getAttribute('data-name');
+                const price = parseFloat(e.target.getAttribute('data-price'));
+                
+                if (id && name && price) {
+                    addToCart(id, name, price);
+                }
+            });
+        });
+
+        // ==================== LÓGICA DEL CREADOR DE PC ====================
+        const components = {
+            cpu: null,
+            gpu: null,
+            ram: null,
+            storage: null,
+            motherboard: null,
+            psu: null,
+            monitor: null,
+            keyboard: null,
+            mouse: null,
+            mousepad: null,
+            desk: null,
+            chair: null
+        };
+        const totalCostSpan = document.getElementById('total-cost');
+        const totalWattageSpan = document.getElementById('total-wattage');
+        const builderAddToCartBtn = document.getElementById('addToCartBtn');
+
+        const updateTotals = () => {
+            let totalCost = 0;
+            let totalWattage = 0;
+            
+            for (const type in components) {
+                if (components[type]) {
+                    totalCost += components[type].price;
+                    totalWattage += components[type].wattage;
+                }
+            }
+            
+            totalCostSpan.textContent = formatPrice(totalCost);
+            totalWattageSpan.textContent = `${totalWattage}W`;
+        };
+
+        document.querySelectorAll('.component-card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                const componentType = card.parentElement.getAttribute('data-component-type');
+                const componentId = card.getAttribute('data-component-id');
+                const componentPrice = parseFloat(card.getAttribute('data-price'));
+                const componentWattage = parseFloat(card.getAttribute('data-wattage'));
+                const componentName = card.querySelector('h4').textContent;
+
+                // Deseleccionar los demás de la misma categoría
+                document.querySelectorAll(`.component-selection[data-component-type="${componentType}"] .component-card`).forEach(c => {
+                    c.classList.remove('selected');
+                });
+
+                // Seleccionar el actual
+                card.classList.add('selected');
+                
+                // Actualizar el objeto de componentes
+                components[componentType] = {
+                    id: componentId,
+                    name: componentName,
+                    price: componentPrice,
+                    wattage: componentWattage
+                };
+
+                updateTotals();
+            });
+        });
+
+        builderAddToCartBtn.addEventListener('click', () => {
+            const pcBuild = {
+                id: 'custom-pc-' + Date.now(),
+                name: 'PC Armada a Medida',
+                price: parseFloat(totalCostSpan.textContent.replace('$ARS ', '').replace(/\./g, '').replace(',', '.'))
+            };
+            addToCart(pcBuild.id, pcBuild.name, pcBuild.price);
+        });
+
+        // ==================== LÓGICA DE LA CALCULADORA DE FPS ====================
+        const fpsData = {
+            // Datos de rendimiento simulados (CPU, GPU, Juego, Resolución -> FPS)
+            // Esto es una simulación para que la funcionalidad exista.
+            'i9-rtx4090-warzone-1080p': '220+', 'i9-rtx4090-warzone-1440p': '180+', 'i9-rtx4090-warzone-4k': '110+',
+            'i9-rtx4090-cyberpunk-1080p': '180+', 'i9-rtx4090-cyberpunk-1440p': '120+', 'i9-rtx4090-cyberpunk-4k': '60+',
+            'i9-rtx4090-gta5-1080p': '280+', 'i9-rtx4090-gta5-1440p': '200+', 'i9-rtx4090-gta5-4k': '130+',
+            'i9-rtx4090-valorant-1080p': '500+', 'i9-rtx4090-valorant-1440p': '350+', 'i9-rtx4090-valorant-4k': '200+',
+            'i9-rtx4090-fortnite-1080p': '400+', 'i9-rtx4090-fortnite-1440p': '250+', 'i9-rtx4090-fortnite-4k': '140+',
+
+            'i7-rtx4080s-warzone-1080p': '180+', 'i7-rtx4080s-warzone-1440p': '140+', 'i7-rtx4080s-warzone-4k': '90+',
+            'i7-rtx4080s-cyberpunk-1080p': '150+', 'i7-rtx4080s-cyberpunk-1440p': '90+', 'i7-rtx4080s-cyberpunk-4k': '50+',
+            'i7-rtx4080s-gta5-1080p': '250+', 'i7-rtx4080s-gta5-1440p': '180+', 'i7-rtx4080s-gta5-4k': '100+',
+            'i7-rtx4080s-valorant-1080p': '450+', 'i7-rtx4080s-valorant-1440p': '300+', 'i7-rtx4080s-valorant-4k': '180+',
+            'i7-rtx4080s-fortnite-1080p': '350+', 'i7-rtx4080s-fortnite-1440p': '220+', 'i7-rtx4080s-fortnite-4k': '120+',
+
+            'i5-rtx4070tis-warzone-1080p': '160+', 'i5-rtx4070tis-warzone-1440p': '120+', 'i5-rtx4070tis-warzone-4k': '70+',
+            'i5-rtx4070tis-cyberpunk-1080p': '130+', 'i5-rtx4070tis-cyberpunk-1440p': '85+', 'i5-rtx4070tis-cyberpunk-4k': '45+',
+            'i5-rtx4070tis-gta5-1080p': '230+', 'i5-rtx4070tis-gta5-1440p': '160+', 'i5-rtx4070tis-gta5-4k': '90+',
+            'i5-rtx4070tis-valorant-1080p': '420+', 'i5-rtx4070tis-valorant-1440p': '290+', 'i5-rtx4070tis-valorant-4k': '160+',
+            'i5-rtx4070tis-fortnite-1080p': '320+', 'i5-rtx4070tis-fortnite-1440p': '190+', 'i5-rtx4070tis-fortnite-4k': '100+',
+
+            'r9-rx7900xtx-warzone-1080p': '170+', 'r9-rx7900xtx-warzone-1440p': '135+', 'r9-rx7900xtx-warzone-4k': '80+',
+            'r9-rx7900xtx-cyberpunk-1080p': '145+', 'r9-rx7900xtx-cyberpunk-1440p': '105+', 'r9-rx7900xtx-cyberpunk-4k': '60+',
+            'r9-rx7900xtx-gta5-1080p': '260+', 'r9-rx7900xtx-gta5-1440p': '190+', 'r9-rx7900xtx-gta5-4k': '110+',
+            'r9-rx7900xtx-valorant-1080p': '480+', 'r9-rx7900xtx-valorant-1440p': '320+', 'r9-rx7900xtx-valorant-4k': '200+',
+            'r9-rx7900xtx-fortnite-1080p': '380+', 'r9-rx7900xtx-fortnite-1440p': '240+', 'r9-rx7900xtx-fortnite-4k': '130+',
+            
+            'r7-rtx4070s-warzone-1080p': '150+', 'r7-rtx4070s-warzone-1440p': '110+', 'r7-rtx4070s-warzone-4k': '65+',
+            'r7-rtx4070s-cyberpunk-1080p': '125+', 'r7-rtx4070s-cyberpunk-1440p': '80+', 'r7-rtx4070s-cyberpunk-4k': '40+',
+            'r7-rtx4070s-gta5-1080p': '210+', 'r7-rtx4070s-gta5-1440p': '140+', 'r7-rtx4070s-gta5-4k': '75+',
+            'r7-rtx4070s-valorant-1080p': '400+', 'r7-rtx4070s-valorant-1440p': '270+', 'r7-rtx4070s-valorant-4k': '150+',
+            'r7-rtx4070s-fortnite-1080p': '290+', 'r7-rtx4070s-fortnite-1440p': '175+', 'r7-rtx4070s-fortnite-4k': '90+',
+            
+            'r5-rtx4060ti-warzone-1080p': '130+', 'r5-rtx4060ti-warzone-1440p': '95+', 'r5-rtx4060ti-warzone-4k': '55+',
+            'r5-rtx4060ti-cyberpunk-1080p': '105+', 'r5-rtx4060ti-cyberpunk-1440p': '70+', 'r5-rtx4060ti-cyberpunk-4k': '35+',
+            'r5-rtx4060ti-gta5-1080p': '190+', 'r5-rtx4060ti-gta5-1440p': '120+', 'r5-rtx4060ti-gta5-4k': '60+',
+            'r5-rtx4060ti-valorant-1080p': '380+', 'r5-rtx4060ti-valorant-1440p': '250+', 'r5-rtx4060ti-valorant-4k': '140+',
+            'r5-rtx4060ti-fortnite-1080p': '270+', 'r5-rtx4060ti-fortnite-1440p': '160+', 'r5-rtx4060ti-fortnite-4k': '80+',
+
+            'r5-rx6600xt-warzone-1080p': '110+', 'r5-rx6600xt-warzone-1440p': '80+', 'r5-rx6600xt-warzone-4k': '40+',
+            'r5-rx6600xt-cyberpunk-1080p': '90+', 'r5-rx6600xt-cyberpunk-1440p': '55+', 'r5-rx6600xt-cyberpunk-4k': '25+',
+            'r5-rx6600xt-gta5-1080p': '170+', 'r5-rx6600xt-gta5-1440p': '100+', 'r5-rx6600xt-gta5-4k': '50+',
+            'r5-rx6600xt-valorant-1080p': '350+', 'r5-rx6600xt-valorant-1440p': '220+', 'r5-rx6600xt-valorant-4k': '120+',
+            'r5-rx6600xt-fortnite-1080p': '240+', 'r5-rx6600xt-fortnite-1440p': '140+', 'r5-rx6600xt-fortnite-4k': '70+',
+
+            'i3-rtx3060-warzone-1080p': '100+', 'i3-rtx3060-warzone-1440p': '75+', 'i3-rtx3060-warzone-4k': '35+',
+            'i3-rtx3060-cyberpunk-1080p': '80+', 'i3-rtx3060-cyberpunk-1440p': '50+', 'i3-rtx3060-cyberpunk-4k': '20+',
+            'i3-rtx3060-gta5-1080p': '150+', 'i3-rtx3060-gta5-1440p': '90+', 'i3-rtx3060-gta5-4k': '45+',
+            'i3-rtx3060-valorant-1080p': '300+', 'i3-rtx3060-valorant-1440p': '190+', 'i3-rtx3060-valorant-4k': '100+',
+            'i3-rtx3060-fortnite-1080p': '220+', 'i3-rtx3060-fortnite-1440p': '120+', 'i3-rtx3060-fortnite-4k': '60+'
+        };
+        
+        const calculateFpsBtn = document.getElementById('calculate-fps-btn');
+        const fpsResultDiv = document.getElementById('fps-result');
+
+        calculateFpsBtn.addEventListener('click', () => {
+            const cpu = document.getElementById('fps-cpu-select').value;
+            const gpu = document.getElementById('fps-gpu-select').value;
+            const game = document.getElementById('fps-game-select').value;
+            const res = document.getElementById('fps-res-select').value;
+
+            const key = `${cpu}-${gpu}-${game}-${res}`;
+            const result = fpsData[key] || 'No disponible';
+
+            fpsResultDiv.innerHTML = `FPS Estimados: <strong>${result}</strong>`;
+            fpsResultDiv.style.display = 'block';
+        });
+
+        // ==================== LÓGICA DEL CATÁLOGO DE PRODUCTOS ====================
+        const productList = document.getElementById('product-list');
+        const searchBar = document.getElementById('search-bar');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+
+        const allProducts = [
+            // Categoria: CPU - 20 items
+            { id: 'prod-cpu-1', name: 'Intel Core i9-14900K', category: 'cpu', price: 1200000 },
+            { id: 'prod-cpu-2', name: 'AMD Ryzen 9 7950X', category: 'cpu', price: 1100000 },
+            { id: 'prod-cpu-3', name: 'Intel Core i7-14700K', category: 'cpu', price: 950000 },
+            { id: 'prod-cpu-4', name: 'AMD Ryzen 7 7700X', category: 'cpu', price: 850000 },
+            { id: 'prod-cpu-5', name: 'Intel Core i5-14600K', category: 'cpu', price: 750000 },
+            { id: 'prod-cpu-6', name: 'AMD Ryzen 5 7600X', category: 'cpu', price: 600000 },
+            { id: 'prod-cpu-7', name: 'Intel Core i5-12400F', category: 'cpu', price: 500000 },
+            { id: 'prod-cpu-8', name: 'AMD Ryzen 5 5600X', category: 'cpu', price: 420000 },
+            { id: 'prod-cpu-9', name: 'Intel Core i3-12100F', category: 'cpu', price: 350000 },
+            { id: 'prod-cpu-10', name: 'AMD Ryzen 3 4100', category: 'cpu', price: 250000 },
+            { id: 'prod-cpu-11', name: 'Intel Core i9-13900K', category: 'cpu', price: 1050000 },
+            { id: 'prod-cpu-12', name: 'AMD Ryzen 7 5800X3D', category: 'cpu', price: 550000 },
+            { id: 'prod-cpu-13', name: 'Intel Core i7-13700K', category: 'cpu', price: 890000 },
+            { id: 'prod-cpu-14', name: 'AMD Ryzen 5 7500F', category: 'cpu', price: 580000 },
+            { id: 'prod-cpu-15', name: 'Intel Core i5-13600KF', category: 'cpu', price: 700000 },
+            { id: 'prod-cpu-16', name: 'AMD Ryzen 5 5600', category: 'cpu', price: 380000 },
+            { id: 'prod-cpu-17', name: 'Intel Core i3-13100F', category: 'cpu', price: 320000 },
+            { id: 'prod-cpu-18', name: 'AMD Ryzen 3 5300G', category: 'cpu', price: 290000 },
+            { id: 'prod-cpu-19', name: 'Intel Core i7-12700K', category: 'cpu', price: 800000 },
+            { id: 'prod-cpu-20', name: 'AMD Ryzen 9 5900X', category: 'cpu', price: 750000 },
+
+            // Categoria: GPU - 20 items
+            { id: 'prod-gpu-1', name: 'NVIDIA GeForce RTX 4090', category: 'gpu', price: 3500000 },
+            { id: 'prod-gpu-2', name: 'NVIDIA GeForce RTX 4080S', category: 'gpu', price: 2800000 },
+            { id: 'prod-gpu-3', name: 'NVIDIA GeForce RTX 4070 Ti S', category: 'gpu', price: 2100000 },
+            { id: 'prod-gpu-4', name: 'NVIDIA GeForce RTX 4070 S', category: 'gpu', price: 1800000 },
+            { id: 'prod-gpu-5', name: 'NVIDIA GeForce RTX 4060 Ti', category: 'gpu', price: 1400000 },
+            { id: 'prod-gpu-6', name: 'AMD Radeon RX 7900 XTX', category: 'gpu', price: 2500000 },
+            { id: 'prod-gpu-7', name: 'AMD Radeon RX 7900 XT', category: 'gpu', price: 2000000 },
+            { id: 'prod-gpu-8', name: 'AMD Radeon RX 7800 XT', category: 'gpu', price: 1300000 },
+            { id: 'prod-gpu-9', name: 'NVIDIA GeForce RTX 3060', category: 'gpu', price: 950000 },
+            { id: 'prod-gpu-10', name: 'AMD Radeon RX 6600 XT', category: 'gpu', price: 800000 },
+            { id: 'prod-gpu-11', name: 'NVIDIA GeForce GTX 1660 Super', category: 'gpu', price: 600000 },
+            { id: 'prod-gpu-12', name: 'NVIDIA GeForce RTX 4060', category: 'gpu', price: 1200000 },
+            { id: 'prod-gpu-13', name: 'AMD Radeon RX 7600 XT', category: 'gpu', price: 900000 },
+            { id: 'prod-gpu-14', name: 'NVIDIA GeForce RTX 3050', category: 'gpu', price: 750000 },
+            { id: 'prod-gpu-15', name: 'AMD Radeon RX 6500 XT', category: 'gpu', price: 550000 },
+            { id: 'prod-gpu-16', name: 'NVIDIA GeForce RTX 2060', category: 'gpu', price: 700000 },
+            { id: 'prod-gpu-17', name: 'AMD Radeon RX 6700 XT', category: 'gpu', price: 1100000 },
+            { id: 'prod-gpu-18', name: 'NVIDIA GeForce RTX 3070', category: 'gpu', price: 1500000 },
+            { id: 'prod-gpu-19', name: 'AMD Radeon RX 6800 XT', category: 'gpu', price: 1400000 },
+            { id: 'prod-gpu-20', name: 'NVIDIA GeForce GTX 1080 Ti', category: 'gpu', price: 400000 },
+
+            // Categoria: RAM - 15 items
+            { id: 'prod-ram-1', name: 'DDR5 Corsair Vengeance 32GB', category: 'ram', price: 350000 },
+            { id: 'prod-ram-2', name: 'DDR4 HyperX Fury 16GB', category: 'ram', price: 200000 },
+            { id: 'prod-ram-3', name: 'DDR5 G.Skill Trident Z5 64GB', category: 'ram', price: 600000 },
+            { id: 'prod-ram-4', name: 'DDR5 Kingston Fury 32GB', category: 'ram', price: 280000 },
+            { id: 'prod-ram-5', name: 'DDR4 Corsair Vengeance 8GB', category: 'ram', price: 150000 },
+            { id: 'prod-ram-6', name: 'DDR4 Teamgroup T-Force 32GB', category: 'ram', price: 280000 },
+            { id: 'prod-ram-7', name: 'DDR5 Adata XPG Lancer 16GB', category: 'ram', price: 180000 },
+            { id: 'prod-ram-8', name: 'DDR4 Crucial Ballistix 16GB', category: 'ram', price: 170000 },
+            { id: 'prod-ram-9', name: 'DDR5 Kingston Fury 64GB', category: 'ram', price: 550000 },
+            { id: 'prod-ram-10', name: 'DDR4 G.Skill Ripjaws 32GB', category: 'ram', price: 290000 },
+            { id: 'prod-ram-11', name: 'DDR5 Corsair Dominator 32GB', category: 'ram', price: 400000 },
+            { id: 'prod-ram-12', name: 'DDR4 HyperX Predator 16GB', category: 'ram', price: 210000 },
+            { id: 'prod-ram-13', name: 'DDR5 Crucial Pro 48GB', category: 'ram', price: 420000 },
+            { id: 'prod-ram-14', name: 'DDR4 Patriot Viper 8GB', category: 'ram', price: 130000 },
+            { id: 'prod-ram-15', name: 'DDR5 Teamgroup T-Force 32GB', category: 'ram', price: 330000 },
+
+            // Categoria: Almacenamiento - 15 items
+            { id: 'prod-storage-1', name: 'SSD Samsung 990 Pro 1TB M.2', category: 'storage', price: 450000 },
+            { id: 'prod-storage-2', name: 'SSD Crucial P3 500GB M.2', category: 'storage', price: 250000 },
+            { id: 'prod-storage-3', name: 'SSD Kingston KC3000 2TB M.2', category: 'storage', price: 700000 },
+            { id: 'prod-storage-4', name: 'HDD Western Digital 1TB', category: 'storage', price: 180000 },
+            { id: 'prod-storage-5', name: 'SSD Crucial P5 Plus 1TB', category: 'storage', price: 350000 },
+            { id: 'prod-storage-6', name: 'HDD Seagate Barracuda 4TB', category: 'storage', price: 550000 },
+            { id: 'prod-storage-7', name: 'SSD Adata XPG SX8200 1TB', category: 'storage', price: 290000 },
+            { id: 'prod-storage-8', name: 'SSD Western Digital SN770 1TB', category: 'storage', price: 300000 },
+            { id: 'prod-storage-9', name: 'SSD Crucial P3 Plus 2TB', category: 'storage', price: 580000 },
+            { id: 'prod-storage-10', name: 'HDD Seagate IronWolf 8TB', category: 'storage', price: 900000 },
+            { id: 'prod-storage-11', name: 'SSD Samsung 980 Pro 2TB', category: 'storage', price: 850000 },
+            { id: 'prod-storage-12', name: 'SSD Teamgroup MP44L 1TB', category: 'storage', price: 270000 },
+            { id: 'prod-storage-13', name: 'HDD Western Digital Blue 2TB', category: 'storage', price: 300000 },
+            { id: 'prod-storage-14', name: 'SSD Kingston NV2 500GB', category: 'storage', price: 190000 },
+            { id: 'prod-storage-15', name: 'SSD Crucial P3 Plus 1TB', category: 'storage', price: 380000 },
+
+            // Categoria: Motherboard - 10 items
+            { id: 'prod-mb-1', name: 'MSI Z790 Tomahawk', category: 'motherboard', price: 600000 },
+            { id: 'prod-mb-2', name: 'Gigabyte B650 Aorus Elite', category: 'motherboard', price: 500000 },
+            { id: 'prod-mb-3', name: 'ASUS ROG Strix B650E-F', category: 'motherboard', price: 450000 },
+            { id: 'prod-mb-4', name: 'MSI B550 GAMING PLUS', category: 'motherboard', price: 380000 },
+            { id: 'prod-mb-5', name: 'Gigabyte Z690 Gaming X', category: 'motherboard', price: 400000 },
+            { id: 'prod-mb-6', name: 'ASUS PRIME B760M', category: 'motherboard', price: 320000 },
+            { id: 'prod-mb-7', name: 'ASRock B650M-HDV', category: 'motherboard', price: 350000 },
+            { id: 'prod-mb-8', name: 'MSI PRO B660M-A', category: 'motherboard', price: 300000 },
+            { id: 'prod-mb-9', name: 'Gigabyte A520M DS3H', category: 'motherboard', price: 180000 },
+            { id: 'prod-mb-10', name: 'ASUS TUF GAMING X670E', category: 'motherboard', price: 750000 },
+
+            // Categoria: PSU - 10 items
+            { id: 'prod-psu-1', name: 'Corsair RM850x 850W', category: 'psu', price: 400000 },
+            { id: 'prod-psu-2', name: 'Seasonic Focus GX-1000', category: 'psu', price: 550000 },
+            { id: 'prod-psu-3', name: 'EVGA SuperNOVA 750W', category: 'psu', price: 300000 },
+            { id: 'prod-psu-4', name: 'Cooler Master MWE Gold 650W', category: 'psu', price: 220000 },
+            { id: 'prod-psu-5', name: 'NZXT C850 850W', category: 'psu', price: 380000 },
+            { id: 'prod-psu-6', name: 'Corsair CV650 650W', category: 'psu', price: 150000 },
+            { id: 'prod-psu-7', name: 'EVGA 500W', category: 'psu', price: 100000 },
+            { id: 'prod-psu-8', name: 'Seasonic Focus GX-750', category: 'psu', price: 350000 },
+            { id: 'prod-psu-9', name: 'Cooler Master V1200', category: 'psu', price: 600000 },
+            { id: 'prod-psu-10', name: 'Thermaltake Smart 600W', category: 'psu', price: 120000 },
+
+            // Categoria: Periféricos (Teclados, Mouses, Pads) - 30 items
+            { id: 'prod-periph-1', name: 'Teclado Mecánico HyperX', category: 'peripherals', price: 180000 },
+            { id: 'prod-periph-2', name: 'Teclado Redragon K552 RGB', category: 'peripherals', price: 150000 },
+            { id: 'prod-periph-3', name: 'Teclado Logitech G Pro X', category: 'peripherals', price: 250000 },
+            { id: 'prod-periph-4', name: 'Teclado T-Dagger T-TGK315', category: 'peripherals', price: 120000 },
+            { id: 'prod-periph-5', name: 'Mouse Razer DeathAdder V3', category: 'peripherals', price: 90000 },
+            { id: 'prod-periph-6', name: 'Mouse Logitech G Pro Wireless', category: 'peripherals', price: 80000 },
+            { id: 'prod-periph-7', name: 'Mouse Redragon M908 Impact', category: 'peripherals', price: 55000 },
+            { id: 'prod-periph-8', name: 'Mouse T-Dagger T-TGM106', category: 'peripherals', price: 40000 },
+            { id: 'prod-periph-9', name: 'HyperX Fury S Pro XL', category: 'peripherals', price: 25000 },
+            { id: 'prod-periph-10', name: 'SteelSeries QcK Edge', category: 'peripherals', price: 22000 },
+            { id: 'prod-periph-11', name: 'Logitech G840 XL', category: 'peripherals', price: 35000 },
+            { id: 'prod-periph-12', name: 'Teclado Corsair K100 RGB', category: 'peripherals', price: 320000 },
+            { id: 'prod-periph-13', name: 'Teclado Ducky One 3', category: 'peripherals', price: 280000 },
+            { id: 'prod-periph-14', name: 'Mouse Razer Viper Ultimate', category: 'peripherals', price: 110000 },
+            { id: 'prod-periph-15', name: 'Mouse Glorious Model O', category: 'peripherals', price: 75000 },
+            { id: 'prod-periph-16', name: 'Mousepad Razer Goliathus', category: 'peripherals', price: 30000 },
+            { id: 'prod-periph-17', name: 'Teclado Redragon Fizz K617', category: 'peripherals', price: 90000 },
+            { id: 'prod-periph-18', name: 'Mouse Logitech G305', category: 'peripherals', price: 65000 },
+            { id: 'prod-periph-19', name: 'Mousepad Cougar Neon', category: 'peripherals', price: 18000 },
+            { id: 'prod-periph-20', name: 'Teclado HyperX Alloy Origins', category: 'peripherals', price: 190000 },
+            { id: 'prod-periph-21', name: 'Mouse Glorious Model D', category: 'peripherals', price: 85000 },
+            { id: 'prod-periph-22', name: 'Mousepad T-Dagger T-TGP100', category: 'peripherals', price: 15000 },
+            { id: 'prod-periph-23', name: 'Teclado Logitech G915 TKL', category: 'peripherals', price: 350000 },
+            { id: 'prod-periph-24', name: 'Mouse SteelSeries Rival 600', category: 'peripherals', price: 95000 },
+            { id: 'prod-periph-25', name: 'Mousepad Redragon P031', category: 'peripherals', price: 28000 },
+            { id: 'prod-periph-26', name: 'Teclado Cooler Master CK550', category: 'peripherals', price: 160000 },
+            { id: 'prod-periph-27', name: 'Mouse Logitech G403 Hero', category: 'peripherals', price: 70000 },
+            { id: 'prod-periph-28', name: 'Mousepad HyperX FURY S', category: 'peripherals', price: 20000 },
+            { id: 'prod-periph-29', name: 'Teclado Ducky Feather', category: 'peripherals', price: 210000 },
+            { id: 'prod-periph-30', name: 'Mouse Razer Basilisk V3', category: 'peripherals', price: 100000 },
+            
+            // Categoria: Gabinetes - 15 items
+            { id: 'prod-cab-1', name: 'Gabinete Cooler Master TD500', category: 'cabinets', price: 180000 },
+            { id: 'prod-cab-2', name: 'Gabinete NZXT H7 Flow', category: 'cabinets', price: 250000 },
+            { id: 'prod-cab-3', name: 'Gabinete Lian Li O11 Dynamic', category: 'cabinets', price: 300000 },
+            { id: 'prod-cab-4', name: 'Gabinete Corsair 4000D Airflow', category: 'cabinets', price: 200000 },
+            { id: 'prod-cab-5', name: 'Gabinete Redragon GC-606', category: 'cabinets', price: 150000 },
+            { id: 'prod-cab-6', name: 'Gabinete Thermaltake H200', category: 'cabinets', price: 120000 },
+            { id: 'prod-cab-7', name: 'Gabinete Aerocool Cylon', category: 'cabinets', price: 100000 },
+            { id: 'prod-cab-8', name: 'Gabinete Cooler Master NR200P', category: 'cabinets', price: 190000 },
+            { id: 'prod-cab-9', name: 'Gabinete Cougar MX330', category: 'cabinets', price: 110000 },
+            { id: 'prod-cab-10', name: 'Gabinete NZXT H5 Flow', category: 'cabinets', price: 220000 },
+            { id: 'prod-cab-11', name: 'Gabinete Corsair iCUE 5000X', category: 'cabinets', price: 350000 },
+            { id: 'prod-cab-12', name: 'Gabinete Lian Li Lancool 216', category: 'cabinets', price: 280000 },
+            { id: 'prod-cab-13', name: 'Gabinete Thermaltake Core P3', category: 'cabinets', price: 250000 },
+            { id: 'prod-cab-14', name: 'Gabinete NZXT H9 Flow', category: 'cabinets', price: 400000 },
+            { id: 'prod-cab-15', name: 'Gabinete Cooler Master MasterBox', category: 'cabinets', price: 130000 },
+
+            // Categoria: Monitores - 10 items
+            { id: 'prod-mon-1', name: 'Monitor Gaming 144Hz', category: 'monitor', price: 750000 },
+            { id: 'prod-mon-2', name: 'Monitor 4K ASUS TUF Gaming', category: 'monitor', price: 1200000 },
+            { id: 'prod-mon-3', name: 'Monitor 24" Full HD', category: 'monitor', price: 550000 },
+            { id: 'prod-mon-4', name: 'Monitor Curvo Samsung 240Hz', category: 'monitor', price: 950000 },
+            { id: 'prod-mon-5', name: 'Monitor LG UltraGear 27" QHD', category: 'monitor', price: 800000 },
+            { id: 'prod-mon-6', name: 'Monitor BenQ ZOWIE XL2546K', category: 'monitor', price: 1100000 },
+            { id: 'prod-mon-7', name: 'Monitor AOC G2490VX 144Hz', category: 'monitor', price: 650000 },
+            { id: 'prod-mon-8', name: 'Monitor ASUS VG27AQL1A', category: 'monitor', price: 850000 },
+            { id: 'prod-mon-9', name: 'Monitor HP X24ih 144Hz', category: 'monitor', price: 580000 },
+            { id: 'prod-mon-10', name: 'Monitor Samsung Odyssey G9', category: 'monitor', price: 2500000 },
+
+            // Categoria: Televisores - 10 items
+            { id: 'prod-tv-1', name: 'Televisor LG 55" 4K Smart TV', category: 'televisions', price: 850000 },
+            { id: 'prod-tv-2', name: 'Televisor Samsung 50" Crystal 4K', category: 'televisions', price: 700000 },
+            { id: 'prod-tv-3', name: 'Televisor Philips 65" 4K HDR', category: 'televisions', price: 1100000 },
+            { id: 'prod-tv-4', name: 'Televisor Sony Bravia 75" 4K', category: 'televisions', price: 1800000 },
+            { id: 'prod-tv-5', name: 'Televisor Samsung 32" Full HD', category: 'televisions', price: 350000 },
+            { id: 'prod-tv-6', name: 'Televisor LG C2 OLED 55" 4K', category: 'televisions', price: 1500000 },
+            { id: 'prod-tv-7', name: 'Televisor LG NanoCell 65" 8K', category: 'televisions', price: 2900000 },
+            { id: 'prod-tv-8', name: 'Televisor Samsung Neo QLED 55"', category: 'televisions', price: 1400000 },
+            { id: 'prod-tv-9', name: 'Televisor TCL 50" 4K QLED', category: 'televisions', price: 650000 },
+            { id: 'prod-tv-10', name: 'Televisor Hisense 58" 4K', category: 'televisions', price: 780000 },
+
+            // Categoria: Sillas Gamer - 10 items
+            { id: 'prod-chair-1', name: 'Silla Gamer Noga RGB', category: 'chairs', price: 200000 },
+            { id: 'prod-chair-2', name: 'Silla Gamer Sentey Pro Series', category: 'chairs', price: 180000 },
+            { id: 'prod-chair-3', name: 'Silla Gamer Corsair T3 Rush', category: 'chairs', price: 300000 },
+            { id: 'prod-chair-4', name: 'Silla GamerDXRacer Racing Series', category: 'chairs', price: 250000 },
+            { id: 'prod-chair-5', name: 'Silla Gamer Redragon C101', category: 'chairs', price: 170000 },
+            { id: 'prod-chair-6', name: 'Silla Gamer Cougar Armor S', category: 'chairs', price: 220000 },
+            { id: 'prod-chair-7', name: 'Silla Gamer Adata XPG Chariot', category: 'chairs', price: 290000 },
+            { id: 'prod-chair-8', name: 'Silla Gamer Corsair TC70 Remix', category: 'chairs', price: 280000 },
+            { id: 'prod-chair-9', name: 'Silla Gamer Sentey Pro', category: 'chairs', price: 190000 },
+            { id: 'prod-chair-10', name: 'Silla Gamer DXRacer Master', category: 'chairs', price: 400000 },
+
+            // Categoria: Consolas - 5 items
+            { id: 'prod-console-1', name: 'PlayStation 5', category: 'consoles', price: 1350000 },
+            { id: 'prod-console-2', name: 'PlayStation 5 (Digital)', category: 'consoles', price: 1200000 },
+            { id: 'prod-console-3', name: 'PlayStation 4 Slim', category: 'consoles', price: 600000 },
+            { id: 'prod-console-4', name: 'PlayStation 4 Pro', category: 'consoles', price: 800000 },
+            { id: 'prod-console-5', name: 'Xbox Series X', category: 'consoles', price: 1400000 },
+
+            // Categoria: Juegos (Físicos y Códigos Steam) - 20 items
+            { id: 'prod-game-1', name: 'FIFA 25 (PS5)', category: 'games', price: 95000 },
+            { id: 'prod-game-2', name: 'God of War Ragnarök (PS5)', category: 'games', price: 80000 },
+            { id: 'prod-game-3', name: 'The Last of Us Part II (PS4)', category: 'games', price: 65000 },
+            { id: 'prod-game-4', name: 'Cyberpunk 2077 (PC Steam Code)', category: 'games', price: 70000 },
+            { id: 'prod-game-5', name: 'Elden Ring (PC Steam Code)', category: 'games', price: 85000 },
+            { id: 'prod-game-6', name: 'Hogwarts Legacy (PS5)', category: 'games', price: 90000 },
+            { id: 'prod-game-7', name: 'Marvel’s Spider-Man 2 (PS5)', category: 'games', price: 100000 },
+            { id: 'prod-game-8', name: 'Diablo IV (PC Battle.net Code)', category: 'games', price: 80000 },
+            { id: 'prod-game-9', name: 'Red Dead Redemption 2 (PS4)', category: 'games', price: 75000 },
+            { id: 'prod-game-10', name: 'Baldur’s Gate 3 (PC Steam Code)', category: 'games', price: 95000 },
+            { id: 'prod-game-11', name: 'Starfield (PC Steam Code)', category: 'games', price: 75000 },
+            { id: 'prod-game-12', name: 'EA Sports FC 24 (PC Steam Code)', category: 'games', price: 70000 },
+            { id: 'prod-game-13', name: 'Assassins Creed Mirage (PS5)', category: 'games', price: 85000 },
+            { id: 'prod-game-14', name: 'Call of Duty: Modern Warfare III (PC)', category: 'games', price: 90000 },
+            { id: 'prod-game-15', name: 'God of War (PS4)', category: 'games', price: 45000 },
+            { id: 'prod-game-16', name: 'Hades (PC Steam Code)', category: 'games', price: 30000 },
+            { id: 'prod-game-17', name: 'Genshin Impact (PC)', category: 'games', price: 0 },
+            { id: 'prod-game-18', name: 'Valorant (PC)', category: 'games', price: 0 },
+            { id: 'prod-game-19', name: 'Fortnite (PC)', category: 'games', price: 0 },
+            { id: 'prod-game-20', name: 'Overwatch 2 (PC)', category: 'games', price: 0 },
+
+            // Categoria: Cables y Accesorios - 15 items
+            { id: 'prod-acc-1', name: 'Cable HDMI 2.1 2m', category: 'accessories', price: 25000 },
+            { id: 'prod-acc-2', name: 'Cable DisplayPort 1.4 1.5m', category: 'accessories', price: 28000 },
+            { id: 'prod-acc-3', name: 'Joystick DualSense PS5', category: 'accessories', price: 110000 },
+            { id: 'prod-acc-4', name: 'Joystick DualShock 4 PS4', category: 'accessories', price: 85000 },
+            { id: 'prod-acc-5', name: 'Auriculares HyperX Cloud II', category: 'accessories', price: 150000 },
+            { id: 'prod-acc-6', name: 'Micrófono Blue Yeti', category: 'accessories', price: 200000 },
+            { id: 'prod-acc-7', name: 'Webcam Logitech C920S', category: 'accessories', price: 90000 },
+            { id: 'prod-acc-8', name: 'Auriculares Razer Kraken X', category: 'accessories', price: 75000 },
+            { id: 'prod-acc-9', name: 'Joystick Xbox Series X', category: 'accessories', price: 105000 },
+            { id: 'prod-acc-10', name: 'Cable de Red CAT6 5m', category: 'accessories', price: 15000 },
+            { id: 'prod-acc-11', name: 'Hub USB 3.0', category: 'accessories', price: 18000 },
+            { id: 'prod-acc-12', name: 'Soporte de Auriculares RGB', category: 'accessories', price: 22000 },
+            { id: 'prod-acc-13', name: 'Cable HDMI 4K 1m', category: 'accessories', price: 18000 },
+            { id: 'prod-acc-14', name: 'Extensor USB 3.0', category: 'accessories', price: 20000 },
+            { id: 'prod-acc-15', name: 'Cable DisplayPort 2.0', category: 'accessories', price: 40000 }
+        ];
+
+        const displayProducts = (products) => {
+            productList.innerHTML = '';
+            products.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'component-item';
+                productDiv.setAttribute('data-category', product.category);
+                productDiv.innerHTML = `
+                    <h3>${product.name}</h3>
+                    <div class="price-tag">${formatPrice(product.price)}</div>
+                    <button class="add-to-cart" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}">
+                        Añadir al Carrito
+                    </button>
+                `;
+                productList.appendChild(productDiv);
+            });
+        };
+
+        const filterProducts = (category) => {
+            const filtered = category === 'all' ? allProducts : allProducts.filter(p => p.category === category);
+            displayProducts(filtered);
+        };
+        
+        searchBar.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filtered = allProducts.filter(p => p.name.toLowerCase().includes(searchTerm));
+            displayProducts(filtered);
+        });
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                e.target.classList.add('active');
+                const category = e.target.getAttribute('data-category');
+                filterProducts(category);
+            });
+        });
+        
+        // Carga inicial de productos
+        displayProducts(allProducts);
+
+        // ==================== LÓGICA DEL CARRUSEL DE PRODUCTOS ====================
+        const featuredProducts = document.getElementById('featured-products');
+        const prevFeaturedBtn = document.getElementById('prev-featured');
+        const nextFeaturedBtn = document.getElementById('next-featured');
+
+        if (featuredProducts && prevFeaturedBtn && nextFeaturedBtn) {
+            nextFeaturedBtn.addEventListener('click', () => {
+                featuredProducts.scrollBy({ left: 300, behavior: 'smooth' });
+            });
+
+            prevFeaturedBtn.addEventListener('click', () => {
+                featuredProducts.scrollBy({ left: -300, behavior: 'smooth' });
+            });
+        }
+        
+        // ==================== LÓGICA DE DETALLES DEL SIDEBAR ====================
+        document.querySelectorAll('details.sidebar').forEach(details => {
+            details.addEventListener('toggle', () => {
+                if (details.open) {
+                    document.querySelectorAll('details.sidebar').forEach(otherDetails => {
+                        if (otherDetails !== details && otherDetails.open) {
+                            otherDetails.open = false;
+                        }
+                    });
+                }
+            });
+        });
+        
+        // Inicializar el carrito
+        updateCartDisplay();
+
+    </script>
+</body>
+</html>
